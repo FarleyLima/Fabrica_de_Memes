@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Makers future</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="app" >
+        <div class="logo">fl </br> developer</div>
+
+        <div class="app_image" id="downlabled">
+          <textarea name="" class="text_box" placeholder="Digite seu meme" aria-multiline="true"></textarea>
+
+          <div id="display_image"></div>
+
+          <textarea name="" class="text_box" id="teste" placeholder="Digite seu meme" aria-multiline="true"></textarea>
+
+        </div>
+
+        <div class="app_photo_picker">
+          <select 
+            name="" id="meme_list"
+            onchange="chageMemePicture(this.value)" <!-- Chamando a fução de troca de imagem -->
+            
+          </select>       
+          <input type="file" id="image_input" accept="image/jpeg, image/png, image/jpg">   
+        </div>
+        
+        <div class="download">
+          <button id="btn_download" title="Clique para baixar seu meme!">download</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/html2Canvas.js"></script>
+  <script>
+    document.getElementById("btn_download").onclick = () => {
+    const screenshotPrint = document.querySelector("#downlabled")
+
+    html2canvas(screenshotPrint).then((canvas)=>{
+      const base64Image = canvas.toDataURL("image/png")
+      let anchor = document.createElement("a")
+      anchor.setAttribute("href", base64Image)
+      anchor.setAttribute("download", "my-meme.png")
+      anchor.click()
+      anchor.remove()
+    })
+  }
+  
+  </script>
+</body>
+</html>

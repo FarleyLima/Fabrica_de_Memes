@@ -1,0 +1,304 @@
+@keyframes animation {
+  0% {
+    background-color: #d8d5d3;
+  }
+  25% {
+    background-color: #acaaa9;
+  }
+  50% {
+    background-color: #6c6c6c;
+  }
+  75% {
+    background-color: #242424;
+  }
+  100% {
+    background-color: #000000;
+  }
+}
+
+body {
+  background-color: #000;
+
+  animation-name: animation;
+  animation-duration: 5s;
+  /*animation-iteration-count: infinite;*/
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  color: #fff;
+}
+
+.logo {
+  text-align: center;
+  text-transform: uppercase;
+
+  font-weight: 600;
+  font-size: 30px;
+
+  padding: 10px 0px 20px 0px;
+}
+
+.app_image {
+  display: flex;
+  flex-direction: column;
+
+  width: 500px;
+}
+
+#display_image {
+  width: 100%;
+  height: 500px;
+
+  /*background-image: url('/assets/image/meme-bebe.png');*/
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.app {
+  border: 2px solid rgba(215, 215, 215, 0.412);
+  border-radius: 12px;
+
+  /*height: 100px;*/
+
+  background-color: #24282b;
+
+  padding: 10px 50px 50px 50px;
+
+  margin-top: 5px;
+}
+
+.app_photo_picker {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*height: 100px;*/
+}
+
+textarea {
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+
+  resize: vertical; /*-- ALMENTAR O TAMANHO DA ÁREA DE TEXTO VERTICALMENTE--*/
+
+  border: none;
+  border-radius: 5px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  overflow: hidden;
+
+  outline: none;
+
+  font-weight: 600;
+  font-size: 17px;
+
+  color: #000;
+}
+
+.text_box {
+  background-color: #080707;
+  color: #f9f9f9;
+
+  padding: 14px 5px;
+
+  text-align: center;
+}
+
+#meme_list {
+  margin: 15px 0;
+  padding: 10px 2.5px;
+
+  width: 100%;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  background-color: #000;
+  color: #6c6c6c;
+}
+
+input[type='file'] {
+  background-color: #000000;
+  color: #6c6c6c;
+
+  padding: 10px 0px;
+  margin-bottom: 15px;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 10px;
+
+  transition: 0.5s;
+}
+
+input[type='file']:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+#btn_download {
+  width: 100%;
+
+  padding: 8px 0px;
+
+  background-color: #e65a1a;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+#btn_download:hover {
+  background-color: #dc8055;
+  color: #d8d5d3;
+
+  transform: scale(1.05);
+}
+
+/* REPONSIVIDADE PARA LAPTOP */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    font-size: 25px;
+
+    padding: 7px 0px 15px 0px;
+  }
+
+  .app_image {
+    width: 400px;
+  }
+
+  #display_image {
+    height: 300px;
+  }
+}
+
+/* REPONSIVIDADE PARA TABLET */
+
+@media (min-width: 375px) and (max-width: 768px) {
+  .app {
+    padding: 10px 40px 30px 40px;
+  }
+
+  .logo {
+    font-size: 20px;
+
+    padding: 7px 0px 15px 0px;
+  }
+
+  .app_image {
+    width: 300px;
+  }
+
+  #display_image {
+    height: 250px;
+  }
+
+  Textarea {
+    height: 40px;
+    min-height: 40px;
+
+    font-size: 15px;
+  }
+
+  .text_box {
+    padding: 14px 4px;
+  }
+
+  .app_photo_picker {
+    width: 300px;
+  }
+
+  input[type='file'] {
+    margin-bottom: 10px;
+
+    font-size: 13px;
+  }
+}
+
+/* RESPONSIVO PARA CELULAR */
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .app {
+    padding: 10px 30px 20px 30px;
+  }
+
+  .logo {
+    font-size: 20px;
+
+    padding: 7px 0px 11px 0px;
+  }
+
+  .app_image {
+    width: 250px;
+  }
+
+  #display_image {
+    height: 250px;
+  }
+
+  Textarea {
+    height: 30px;
+    min-height: 35px;
+
+    font-size: 13px;
+  }
+
+  .text_box {
+    padding: 14px 4px;
+
+    font-size: 13px;
+  }
+
+  .app_photo_picker {
+    margin-top: 5px;
+
+    width: 250px;
+  }
+
+  #meme_list {
+    margin-top: 5px;
+    margin: 12px 0;
+
+    width: 100%;
+
+    font-size: 13px;
+  }
+
+  input[type='file'] {
+    margin-bottom: 8px;
+
+    font-size: 13px;
+  }
+}
